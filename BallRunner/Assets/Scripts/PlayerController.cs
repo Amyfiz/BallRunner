@@ -7,29 +7,25 @@ using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
-    //public Button ButtonUp;
-    [SerializeField] int time;
+    private bool isGoingUp = false;
+    public Rigidbody2D rigidbody;
+    public float flyForce = 10f;
     
     private void Start()
     {
         
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (isGoingUp)
         {
-            StartCoroutine(FlyUp());
-        }
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            StopCoroutine(FlyUp());
+            rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
         }
     }
 
-    IEnumerator  FlyUp()
+    public void Up(bool _isGoingUp)
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.1f, 0);
-        yield return new WaitForSeconds(time);
+        isGoingUp = _isGoingUp;
     }
 }
