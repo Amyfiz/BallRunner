@@ -15,11 +15,12 @@ public class PlayerController : MonoBehaviour
     //public CircleCollider2D playerCollider;
     //public TilemapCollider2D wallsCollider;
     public GameObject gameOverMenu;
+    public Stopwatch stopwatch;
     
     
     private void Start()
     {
-        
+        stopwatch.StartStopwatch();
     }
 
     void FixedUpdate()
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
         if (wall.tag == "Wall")
         {
             Time.timeScale = 0;
+            stopwatch.StopStopwatch();
             gameOverMenu.SetActive(true);
         }
     }

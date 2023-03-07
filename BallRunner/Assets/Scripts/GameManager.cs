@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject frame;
+    public GameObject objects;
 
     private void Start()
     {
-        InvokeRepeating("DublicateObjects", 1, 1);
+        InvokeRepeating("DublicateBackground", 1, 1);
     }
 
-    void DublicateObjects()
+    void DublicateBackground()
     {
-        Instantiate(frame, new Vector3(27f, -7f, 0), Quaternion.identity);
+        Instantiate(objects, new Vector3(9f, -7f, 0), Quaternion.identity);
     }
 }
