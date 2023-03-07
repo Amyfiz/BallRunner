@@ -15,10 +15,5 @@ public class ObjectMove : MonoBehaviour
     private void FixedUpdate()
     {
         transform.position = new Vector3(transform.position.x - speed, transform.position.y, 0);
-
-        if (transform.position.x <= -20f)
-        {
-            //Destroy(gameObject);
-        }
     }
 }
