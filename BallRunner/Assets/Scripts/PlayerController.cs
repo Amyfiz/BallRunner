@@ -13,7 +13,9 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D rigidbody;
     public float flyForce = 10f;
     //public CircleCollider2D playerCollider;
-    public TilemapCollider2D wallsCollider;
+    //public TilemapCollider2D wallsCollider;
+    public GameObject gameOverMenu;
+    
     
     private void Start()
     {
@@ -33,6 +35,7 @@ public class PlayerController : MonoBehaviour
         if (wall.tag == "Wall")
         {
             Time.timeScale = 0;
+            gameOverMenu.SetActive(true);
         }
     }
 

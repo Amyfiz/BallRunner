@@ -152,8 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 208761182962816775}
   flyForce: 10
-  playerCollider: {fileID: 5267017526212704172}
-  wallsCollider: {fileID: 0}
+  gameOverMenu: {fileID: 0}
 --- !u!1 &5732897577350523540
 GameObject:
   m_ObjectHideFlags: 0
