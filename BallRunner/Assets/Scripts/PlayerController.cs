@@ -12,22 +12,34 @@ public class PlayerController : MonoBehaviour
     private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
     public float flyForce = 10f;
-    //public CircleCollider2D playerCollider;
-    //public TilemapCollider2D wallsCollider;
-    public GameOverMenu gameOverMenu;
-    public Stopwatch stopwatch;
-    
+    //public GameOverMenu gameOverMenu;
+    //public Stopwatch stopwatch;
+    //public Canvas canvas;
     
     private void Start()
     {
-        stopwatch.StartStopwatch();
+        GameEventManager.instance.GameStart();
+        transform.position = new Vector3(3, -7, 0);
+        Time.timeScale = 1;
+        //GameEventManager.instance.onGameStart += GameStart;
+    }
+
+    private void OnDestroy()
+    {
+        //GameEventManager.instance.onGameStart -= GameStart;
+    }
+
+    public void GameStart()
+    {
+        
     }
 
     void FixedUpdate()
     {
         if (isGoingUp)
         {
-            rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+            //rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
         }
     }
 
@@ -35,14 +47,19 @@ public class PlayerController : MonoBehaviour
     {
         if (wall.tag == "Wall")
         {
-            stopwatch.StopStopwatch();
-            gameOverMenu.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            Death();
         }
     }
 
     public void Up(bool _isGoingUp)
     {
         isGoingUp = _isGoingUp;
+    }
+
+    public void Death()
+    {
+        GameEventManager.instance.PlayerDeath();
+        DataPersistenceManager.instance.SaveGame();
+        Time.timeScale = 0;
     }
 }

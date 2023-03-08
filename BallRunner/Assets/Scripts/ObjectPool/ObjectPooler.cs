@@ -43,7 +43,7 @@ public class ObjectPooler : MonoBehaviour
             }
             
             poolDictionary.Add(pool.tag, objectPool);
-            Debug.Log( pool.size + " pools with tag " + pool.tag + " added to dictionary");
+            //Debug.Log( pool.size + " pools with tag " + pool.tag + " added to dictionary");
         }
     }
 

@@ -14,6 +14,15 @@ public class Stopwatch : MonoBehaviour
     public void Start()
     {
         currentTime = 0;
+        GameEventManager.instance.onGameStart += StartStopwatch;
+        GameEventManager.instance.onPlayerDeath += StopStopwatch;
+    }
+
+    private void OnDestroy() 
+    {
+        // unsubscribe from events
+        GameEventManager.instance.onPlayerDeath -= StartStopwatch;
+        GameEventManager.instance.onPlayerDeath -= StopStopwatch;
     }
 
     private void Update()
