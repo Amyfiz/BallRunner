@@ -744,7 +744,7 @@ MonoBehaviour:
   pools:
   - tag: Frame
     prefab: {fileID: 1089542324268954241, guid: ec7eaba23fc1f20408da3a4cf82cde69, type: 3}
-    size: 5
+    size: 1
 --- !u!4 &724205841
 Transform:
   m_ObjectHideFlags: 0

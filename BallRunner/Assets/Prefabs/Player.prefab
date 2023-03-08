@@ -153,6 +153,7 @@ MonoBehaviour:
   rigidbody: {fileID: 208761182962816775}
   flyForce: 10
   gameOverMenu: {fileID: 0}
+  stopwatch: {fileID: 0}
 --- !u!1 &5732897577350523540
 GameObject:
   m_ObjectHideFlags: 0

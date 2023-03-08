@@ -14,7 +14,7 @@ public class FrameSpawner : MonoBehaviour
         //Instantiate(framePrefab, new Vector3(9f, -7, 0), Quaternion.identity);
         //objectPooler.SpawnFromPool("Frame", new Vector3(9f, -7, 0), Quaternion.identity);
 
-        InvokeRepeating("SpawnFrame", 1, 1);
+        InvokeRepeating("SpawnFrame", 0, 1);
     }
 
     private void SpawnFrame()
