@@ -12,14 +12,13 @@ public class PlayerController : MonoBehaviour
     private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
     public float flyForce = 10f;
-    //public CircleCollider2D playerCollider;
-    //public TilemapCollider2D wallsCollider;
     public GameOverMenu gameOverMenu;
     public Stopwatch stopwatch;
     
-    
     private void Start()
     {
+        DataPersistenceManager.instance.LoadGame();
+        Time.timeScale = 1;
         stopwatch.StartStopwatch();
     }
 
@@ -35,14 +34,22 @@ public class PlayerController : MonoBehaviour
     {
         if (wall.tag == "Wall")
         {
-            stopwatch.StopStopwatch();
-            gameOverMenu.gameObject.SetActive(true);
-            Time.timeScale = 0;
+            Death();
         }
     }
 
     public void Up(bool _isGoingUp)
     {
         isGoingUp = _isGoingUp;
+    }
+
+    public void Death()
+    {
+        GameEventManager.instance.PlayerDeath();
+        stopwatch.StopStopwatch();
+        gameOverMenu.gameObject.SetActive(true);
+        DataPersistenceManager.instance.SaveGame();
+        Time.timeScale = 0;
+        
     }
 }
