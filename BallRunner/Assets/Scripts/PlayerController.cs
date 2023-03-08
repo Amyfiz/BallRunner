@@ -14,11 +14,17 @@ public class PlayerController : MonoBehaviour
     public float flyForce = 10f;
     public GameOverMenu gameOverMenu;
     public Stopwatch stopwatch;
+    public Canvas canvas;
     
     private void Start()
     {
         //DataPersistenceManager.instance.LoadGame();
+        transform.position = new Vector3(3, -7, 0);
         Time.timeScale = 1;
+        // canvas.stopwatch.gameObject.SetActive(true);
+        // canvas.buttonUp.gameObject.SetActive(true);
+        // canvas.deathCount.gameObject.SetActive(true);
+        canvas.gameObject.SetActive(true);
         stopwatch.StartStopwatch();
     }
 
@@ -34,14 +40,7 @@ public class PlayerController : MonoBehaviour
     {
         if (wall.tag == "Wall")
         {
-            GameEventManager.instance.PlayerDeath();
-        
-            stopwatch.StopStopwatch();
-            gameOverMenu.gameObject.SetActive(true);
-            DataPersistenceManager.instance.SaveGame();
-            Time.timeScale = 0;
-            
-            //Death();
+            Death();
         }
     }
 
@@ -50,9 +49,12 @@ public class PlayerController : MonoBehaviour
         isGoingUp = _isGoingUp;
     }
 
-    // public void Death()
-    // {
-    //     
-    //     
-    // }
+    public void Death()
+    {
+        stopwatch.StopStopwatch();
+        GameEventManager.instance.PlayerDeath();
+        DataPersistenceManager.instance.SaveGame();
+        gameOverMenu.gameObject.SetActive(true);
+        Time.timeScale = 0;
+    }
 }

@@ -7,7 +7,7 @@ public class DeathCount : MonoBehaviour, IDataPersistence
 {
     private int deathCount = 0;
 
-    private TextMeshProUGUI deathCountText;
+    public TextMeshProUGUI deathCountText;
 
     private void Awake() 
     {
