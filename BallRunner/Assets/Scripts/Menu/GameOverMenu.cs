@@ -18,13 +18,14 @@ public class GameOverMenu : MonoBehaviour
         //isGameOverMenuOn = true;
         gameOverMenu.SetActive(true);
         
-        buttonUp.SetActive(false);
-        stopwatch.gameObject.SetActive(false);
-        gameTime.text = stopwatch.currentTimeText.text;
+        //buttonUp.SetActive(false);
+        //stopwatch.gameObject.SetActive(false);
+        //gameTime.text = stopwatch.currentTimeText.text;
     }
 
     public void StartOver()
     {
         SceneManager.LoadScene(1);
+        DataPersistenceManager.instance.LoadGame();
     }
 }

@@ -1,13 +1,19 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using System.Linq;
 
 public class DataPersistenceManager : MonoBehaviour
 {
+    [Header("File Storage Config")] 
+    [SerializeField]
+    private string fileName;
+    
     private GameData gameData;
     public List<IDataPersistence> dataPersistenceObjects;
+    private FileDataHandler dataHandler;
 
     public static DataPersistenceManager instance { get; private set; }
 
@@ -23,6 +29,7 @@ public class DataPersistenceManager : MonoBehaviour
 
     private void Start()
     {
+        this.dataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         this.dataPersistenceObjects = FindAllDataPersistenceObjects();
         LoadGame();
     }
@@ -34,6 +41,8 @@ public class DataPersistenceManager : MonoBehaviour
     
     public void LoadGame()
     {
+        this.gameData = dataHandler.Load();
+        
         if (this.gameData == null)
         {
             Debug.Log("No data to load");
@@ -56,6 +65,8 @@ public class DataPersistenceManager : MonoBehaviour
         }
         
         Debug.Log("Saved death count = " + gameData.deathCount);
+        
+        dataHandler.Save(gameData);
     }
 
     private void OnApplicationQuit()

@@ -1,19 +1,19 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using TMPro;
 
 public class DeathCount : MonoBehaviour, IDataPersistence
 {
-    public int deathCount = 0;
+    private int deathCount = 0;
+
     private TextMeshProUGUI deathCountText;
 
-    private void Awake()
+    private void Awake() 
     {
         deathCountText = this.GetComponent<TextMeshProUGUI>();
     }
-
+    
     public void LoadData(GameData data)
     {
         this.deathCount = data.deathCount;
@@ -24,22 +24,25 @@ public class DeathCount : MonoBehaviour, IDataPersistence
         data.deathCount = this.deathCount;
     }
 
-    private void Start()
+    private void Start() 
     {
+        // subscribe to events
         GameEventManager.instance.onPlayerDeath += OnPlayerDeath;
     }
 
-    private void OnDestroy()
+    private void OnDestroy() 
     {
+        // unsubscribe from events
         GameEventManager.instance.onPlayerDeath -= OnPlayerDeath;
     }
 
-    private void OnPlayerDeath()
+    private void OnPlayerDeath() 
     {
         deathCount++;
+        //Debug.Log("Deaths: " + deathCount);
     }
 
-    private void Update()
+    private void Update() 
     {
         deathCountText.text = "Deaths: " + deathCount;
     }

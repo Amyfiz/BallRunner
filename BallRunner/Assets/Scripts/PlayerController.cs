@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     
     private void Start()
     {
-        DataPersistenceManager.instance.LoadGame();
+        //DataPersistenceManager.instance.LoadGame();
         Time.timeScale = 1;
         stopwatch.StartStopwatch();
     }
@@ -34,7 +34,14 @@ public class PlayerController : MonoBehaviour
     {
         if (wall.tag == "Wall")
         {
-            Death();
+            GameEventManager.instance.PlayerDeath();
+        
+            stopwatch.StopStopwatch();
+            gameOverMenu.gameObject.SetActive(true);
+            DataPersistenceManager.instance.SaveGame();
+            Time.timeScale = 0;
+            
+            //Death();
         }
     }
 
@@ -43,13 +50,9 @@ public class PlayerController : MonoBehaviour
         isGoingUp = _isGoingUp;
     }
 
-    public void Death()
-    {
-        GameEventManager.instance.PlayerDeath();
-        stopwatch.StopStopwatch();
-        gameOverMenu.gameObject.SetActive(true);
-        DataPersistenceManager.instance.SaveGame();
-        Time.timeScale = 0;
-        
-    }
+    // public void Death()
+    // {
+    //     
+    //     
+    // }
 }
