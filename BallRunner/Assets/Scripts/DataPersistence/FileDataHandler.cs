@@ -35,7 +35,7 @@ public class FileDataHandler
 
                 loadedData = JsonUtility.FromJson<GameData>(dataToLoad);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Debug.Log("No saving data for you L");
             }
@@ -62,7 +62,7 @@ public class FileDataHandler
                 }
             }
         }
-        catch (Exception e)
+        catch (Exception)
         {
             Debug.Log("No saving data for you L");
         }

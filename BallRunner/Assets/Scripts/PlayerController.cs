@@ -12,27 +12,34 @@ public class PlayerController : MonoBehaviour
     private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
     public float flyForce = 10f;
-    public GameOverMenu gameOverMenu;
-    public Stopwatch stopwatch;
-    public Canvas canvas;
+    //public GameOverMenu gameOverMenu;
+    //public Stopwatch stopwatch;
+    //public Canvas canvas;
     
     private void Start()
     {
-        //DataPersistenceManager.instance.LoadGame();
+        GameEventManager.instance.GameStart();
         transform.position = new Vector3(3, -7, 0);
         Time.timeScale = 1;
-        // canvas.stopwatch.gameObject.SetActive(true);
-        // canvas.buttonUp.gameObject.SetActive(true);
-        // canvas.deathCount.gameObject.SetActive(true);
-        canvas.gameObject.SetActive(true);
-        stopwatch.StartStopwatch();
+        //GameEventManager.instance.onGameStart += GameStart;
+    }
+
+    private void OnDestroy()
+    {
+        //GameEventManager.instance.onGameStart -= GameStart;
+    }
+
+    public void GameStart()
+    {
+        
     }
 
     void FixedUpdate()
     {
         if (isGoingUp)
         {
-            rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+            //rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
         }
     }
 
@@ -51,10 +58,8 @@ public class PlayerController : MonoBehaviour
 
     public void Death()
     {
-        stopwatch.StopStopwatch();
         GameEventManager.instance.PlayerDeath();
         DataPersistenceManager.instance.SaveGame();
-        gameOverMenu.gameObject.SetActive(true);
         Time.timeScale = 0;
     }
 }

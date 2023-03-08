@@ -14,6 +14,16 @@ public class GameEventManager : MonoBehaviour
         instance = this;
     }
 
+    public event Action onGameStart;
+
+    public void GameStart()
+    {
+        if (onGameStart != null)
+        {
+            onGameStart();
+        }
+    }
+
     public event Action onPlayerDeath;
     public void PlayerDeath() 
     {

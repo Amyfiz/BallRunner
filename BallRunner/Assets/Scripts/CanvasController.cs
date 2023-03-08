@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class CanvasController : MonoBehaviour
 {
+    public PlayerController player;
+    
     public GameOverMenu gameOverMenu;
     public Stopwatch stopwatch;
     public Button buttonUp;

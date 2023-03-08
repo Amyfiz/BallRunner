@@ -17,13 +17,26 @@ public class GameOverMenu : MonoBehaviour
     
     public void Start()
     {
-        //isGameOverMenuOn = true;
+        GameEventManager.instance.onGameStart += HideGameOverMenu;
+        GameEventManager.instance.onPlayerDeath += ShowGameOverMenu;
+    }
+
+    public void OnDestroy()
+    {
+        GameEventManager.instance.onGameStart -= HideGameOverMenu;
+        GameEventManager.instance.onPlayerDeath -= ShowGameOverMenu;
+    }
+
+    public void ShowGameOverMenu()
+    {
         gameOverMenu.SetActive(true);
-        
-        //buttonUp.SetActive(false);
-        //stopwatch.gameObject.SetActive(false);
         gameTime.text = stopwatch.currentTimeText.text;
         deaths.text = deathCount.deathCountText.text;
+    }
+    
+    public void HideGameOverMenu()
+    {
+        gameOverMenu.SetActive(false);
     }
 
     public void StartOver()
