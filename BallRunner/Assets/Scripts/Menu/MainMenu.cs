@@ -20,13 +20,13 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    public void ShowLevels()
-    {
-        if (!levelsOn)
-        {
-            selectLevel.SetActive(!selectLevel.activeSelf);
-        }
-    }
+    // public void ShowLevels()
+    // {
+    //     if (!levelsOn)
+    //     {
+    //         selectLevel.SetActive(!selectLevel.activeSelf);
+    //     }
+    // }
 
     public void Quit()
     {
