@@ -354,9 +354,8 @@ GameObject:
   - component: {fileID: 7247096282654972121}
   - component: {fileID: 7247096282654972122}
   - component: {fileID: 7247096282654972123}
-  - component: {fileID: 7247096282654972120}
   m_Layer: 5
-  m_Name: DeathCount
+  m_Name: DeathCountTextCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -478,19 +477,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7247096282654972120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7247096282654972126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4691cab1055108a46984dea50363b0d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathCountText: {fileID: 0}
 --- !u!1 &7247096282671685287
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,9 +534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 7247096282671685287}
   stopwatch: {fileID: 7247096282908393447}
-  deathCount: {fileID: 7247096282654972120}
   stopwatchText: {fileID: 7247096284215654956}
-  deathCountText: {fileID: 7247096282757248842}
 --- !u!1 &7247096282757248841
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +547,7 @@ GameObject:
   - component: {fileID: 7247096282757248853}
   - component: {fileID: 7247096282757248842}
   m_Layer: 5
-  m_Name: DeathCountText
+  m_Name: DeathCountTextGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1483,6 +1467,7 @@ GameObject:
   - component: {fileID: 7247096284230686348}
   - component: {fileID: 7247096284230686349}
   - component: {fileID: 7247096284230686338}
+  - component: {fileID: 734829805213994141}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1575,6 +1560,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &734829805213994141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247096284230686339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4691cab1055108a46984dea50363b0d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathCountTextCanvas: {fileID: 7247096282654972123}
+  deathCountTextGameOver: {fileID: 7247096282757248842}
 --- !u!1 &8916517645674740212
 GameObject:
   m_ObjectHideFlags: 0
