@@ -10,12 +10,6 @@ public class DeathCount : MonoBehaviour, IDataPersistence
     public TextMeshProUGUI deathCountTextCanvas;
     public TextMeshProUGUI deathCountTextGameOver;
 
-    private void Awake() 
-    {
-        // deathCountTextCanvas = this.GetComponent<TextMeshProUGUI>();
-        // deathCountTextGameOver = this.GetComponent<TextMeshProUGUI>();
-    }
-    
     public void LoadData(GameData data)
     {
         this.deathCount = data.deathCount;
