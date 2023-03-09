@@ -10,7 +10,7 @@ public class WallSpawner : MonoBehaviour
     public float minY;
     //public float timeBetweenSpawn;
 
-    private string[] walls = { "3BlockWall", "CornerWall", "PointWall", "TWall"};
+    private string[] walls = { "ThreeBlockWall", "CornerWall", "PointWall", "TWall"};
     
 
     void Start()
