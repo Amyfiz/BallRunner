@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class ButtonUp : MonoBehaviour
 {
     private bool isGoingUp = false;
-    private bool isGameStarted = false;
+    //private bool isGameStarted = false;
 
     private void Update()
     {

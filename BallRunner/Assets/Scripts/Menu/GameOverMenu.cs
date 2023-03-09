@@ -11,8 +11,8 @@ public class GameOverMenu : MonoBehaviour
     public GameObject gameOverMenu;
     public Stopwatch stopwatch;
     public DeathCount deathCount;
-    public TextMeshProUGUI gameTime;
-    public TextMeshProUGUI deaths;
+    public TextMeshProUGUI stopwatchText;
+    public TextMeshProUGUI deathCountText;
     
     public void Start()
     {
@@ -29,8 +29,9 @@ public class GameOverMenu : MonoBehaviour
     public void ShowGameOverMenu()
     {
         gameOverMenu.SetActive(true);
-        gameTime.text = stopwatch.currentTimeText.text;
-        deaths.text = deathCount.deathCountText.text;
+        
+        stopwatchText.text = stopwatch.currentTimeText.text;
+        deathCountText.text = deathCount.deathCountText.text;
         
         stopwatch.gameObject.SetActive(false);
         deathCount.gameObject.SetActive(false);

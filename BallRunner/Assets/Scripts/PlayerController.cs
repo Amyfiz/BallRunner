@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         GameStart();
+        Time.timeScale = 0;
         //GameEventManager.instance.onGameStart += GameStart;
     }
 
@@ -28,7 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         GameEventManager.instance.GameStart();
         transform.position = new Vector3(3, -7, 0);
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
     }
 
     void FixedUpdate()
