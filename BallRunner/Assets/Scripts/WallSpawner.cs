@@ -9,7 +9,6 @@ public class WallSpawner : MonoBehaviour
     public float maxY;
     public float minY;
     //public float timeBetweenSpawn;
-    public CurrentDifficulty currentDifficulty;
 
     private string[] walls = { "3BlockWall", "CornerWall", "PointWall", "TWall"};
     
@@ -17,8 +16,8 @@ public class WallSpawner : MonoBehaviour
     void Start()
     {
         objectPooler = ObjectPooler.Instance;
-        InvokeRepeating("Spawn", 0, currentDifficulty.wallFrequency);
-        Debug.Log("Wall spawned");
+        InvokeRepeating("Spawn", 0, DifficultyHolder.currentDifficulty.wallFrequency);
+        Debug.Log("wall spawned");
     }
 
     public void Spawn()

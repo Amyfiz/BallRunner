@@ -96,6 +96,7 @@
      <Compile Include="Assets\Scripts\CurrentDifficulty.cs" />
      <Compile Include="Assets\Scripts\DifficultyHolder.cs" />
      <Compile Include="Assets\Scripts\SelectLevel.cs" />
+     <Compile Include="Assets\Scripts\SpeedHolder.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
