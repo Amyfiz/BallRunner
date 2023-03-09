@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrameSpawner : MonoBehaviour
+public class TopButtomWallsSpawner : MonoBehaviour
 {
-    //public GameObject framePrefab;
+    private GameObject topButtomWalls;
     private ObjectPooler objectPooler;
     private float speed;
     public GameObject starterPoint;
