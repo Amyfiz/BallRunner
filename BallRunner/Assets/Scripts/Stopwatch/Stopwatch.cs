@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Stopwatch : MonoBehaviour
 {
@@ -21,7 +18,6 @@ public class Stopwatch : MonoBehaviour
 
     private void OnDestroy() 
     {
-        // unsubscribe from events
         GameEventManager.instance.onPlayerDeath -= StartStopwatch;
         GameEventManager.instance.onPlayerDeath -= StopStopwatch;
     }

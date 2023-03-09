@@ -11,6 +11,7 @@ public class GameEventManager : MonoBehaviour
         {
             Debug.LogError("Found more than one Game Events Manager in the scene.");
         }
+        
         instance = this;
     }
 
@@ -32,13 +33,4 @@ public class GameEventManager : MonoBehaviour
             onPlayerDeath();
         }
     }
-
-    // public event Action onCoinCollected;
-    // public void CoinCollected() 
-    // {
-    //     if (onCoinCollected != null) 
-    //     {
-    //         onCoinCollected();
-    //     }
-    // }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -22,13 +20,11 @@ public class DeathCount : MonoBehaviour, IDataPersistence
 
     private void Start() 
     {
-        // subscribe to events
         GameEventManager.instance.onPlayerDeath += OnPlayerDeath;
     }
 
     private void OnDestroy() 
     {
-        // unsubscribe from events
         GameEventManager.instance.onPlayerDeath -= OnPlayerDeath;
     }
 

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class WallSpawner : MonoBehaviour
@@ -8,11 +6,9 @@ public class WallSpawner : MonoBehaviour
     public float vectorX;
     public float maxY;
     public float minY;
-    //public float timeBetweenSpawn;
 
     private string[] walls = { "ThreeBlockWall", "CornerWall", "PointWall", "TWall"};
     
-
     void Start()
     {
         objectPooler = ObjectPooler.Instance;

@@ -1,13 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class ButtonUp : MonoBehaviour
 {
     private bool isGoingUp = false;
-    //private bool isGameStarted = false;
 
     private void Update()
     {
@@ -22,14 +17,4 @@ public class ButtonUp : MonoBehaviour
     {
         isGoingUp = _isGoingUp;
     }
-
-    // public void StartGame()
-    // {
-    //     if (!isGameStarted)
-    //     {
-    //         GameEventManager.instance.GameStart();
-    //     }
-    //
-    //     isGameStarted = true;
-    // }
 }

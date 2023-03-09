@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -43,7 +41,6 @@ public class ObjectPooler : MonoBehaviour
             }
             
             poolDictionary.Add(pool.tag, objectPool);
-            //Debug.Log( pool.size + " pools with tag " + pool.tag + " added to dictionary");
         }
     }
 
