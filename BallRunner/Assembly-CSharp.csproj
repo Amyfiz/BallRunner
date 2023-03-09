@@ -92,6 +92,11 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
      <Compile Include="Assets\Scripts\TapToStartButton.cs" />
+     <Compile Include="Assets\Scripts\WallSpawner.cs" />
+     <Compile Include="Assets\Scripts\CurrentDifficulty.cs" />
+     <Compile Include="Assets\Scripts\DifficultyHolder.cs" />
+     <Compile Include="Assets\Scripts\SelectLevel.cs" />
+     <Compile Include="Assets\Scripts\SpeedHolder.cs" />
      <Folder Include="Assets" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Sprites" />
@@ -132,6 +137,7 @@
      <Folder Include="Assets\Textures\Tilemap" />
      <Folder Include="Assets\TextMesh Pro\Resources\Style Sheets" />
      <Folder Include="Assets\TextMesh Pro\Fonts" />
+     <Folder Include="Assets\Prefabs\Walls" />
      <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
      <Folder Include="Assets\TextMesh Pro\Examples &amp; Extras\Prefabs" />
      <Folder Include="Assets\Prefabs" />

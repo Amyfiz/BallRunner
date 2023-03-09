@@ -3,11 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FrameSpawner : MonoBehaviour
+public class TopButtomWallsSpawner : MonoBehaviour
 {
-    //public GameObject framePrefab;
+    private GameObject topButtomWalls;
     private ObjectPooler objectPooler;
     private float speed;
+    public GameObject starterPoint;
     
     public int secondsToSpeedUp;
 
@@ -15,13 +16,17 @@ public class FrameSpawner : MonoBehaviour
     {
         objectPooler = ObjectPooler.Instance;
         speed = 0.1f;
+        //SpawnFrame();
+        objectPooler.SpawnFromPool("Frame", starterPoint.transform.position, Quaternion.identity);
+
+
         InvokeRepeating("IncreaseSpeed", secondsToSpeedUp, secondsToSpeedUp);
         InvokeRepeating("SpawnFrame", 0, 1);
     }
 
     private void SpawnFrame()
     {
-        objectPooler.SpawnFromPool("Frame", new Vector3(9f, -7, 0), Quaternion.identity);
+        objectPooler.SpawnFromPool("Frame", starterPoint.transform.position, Quaternion.identity);
     }
 
     private void FixedUpdate()
