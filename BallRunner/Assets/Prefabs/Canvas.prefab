@@ -533,8 +533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 7247096282671685287}
-  stopwatch: {fileID: 7247096282908393447}
-  stopwatchText: {fileID: 7247096284215654956}
 --- !u!1 &7247096282757248841
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,9 +678,8 @@ GameObject:
   - component: {fileID: 7247096282908393434}
   - component: {fileID: 7247096282908393444}
   - component: {fileID: 7247096282908393445}
-  - component: {fileID: 7247096282908393447}
   m_Layer: 5
-  m_Name: Stopwatch
+  m_Name: StopwatchTextCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -804,19 +801,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7247096282908393447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7247096282908393435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44a970e05e0c13e4e9a9fedd19865416, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTimeText: {fileID: 7247096282908393445}
 --- !u!1 &7247096282948926682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,7 +1317,7 @@ GameObject:
   - component: {fileID: 7247096284215654959}
   - component: {fileID: 7247096284215654956}
   m_Layer: 5
-  m_Name: StopwatchText
+  m_Name: StopwatchTextGameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1468,6 +1452,7 @@ GameObject:
   - component: {fileID: 7247096284230686349}
   - component: {fileID: 7247096284230686338}
   - component: {fileID: 734829805213994141}
+  - component: {fileID: 7986957263252040495}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1574,6 +1559,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathCountTextCanvas: {fileID: 7247096282654972123}
   deathCountTextGameOver: {fileID: 7247096282757248842}
+--- !u!114 &7986957263252040495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7247096284230686339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44a970e05e0c13e4e9a9fedd19865416, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTimeTextCanvas: {fileID: 7247096282908393445}
+  currentTimeTextGameOver: {fileID: 7247096284215654956}
 --- !u!1 &8916517645674740212
 GameObject:
   m_ObjectHideFlags: 0

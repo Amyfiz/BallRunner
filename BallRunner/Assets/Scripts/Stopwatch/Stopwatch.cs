@@ -9,7 +9,8 @@ public class Stopwatch : MonoBehaviour
 {
     private bool stopwatchActivate = false;
     private float currentTime;
-    public TextMeshProUGUI currentTimeText;
+    public TextMeshProUGUI currentTimeTextCanvas;
+    public TextMeshProUGUI currentTimeTextGameOver;
     
     public void Start()
     {
@@ -34,7 +35,8 @@ public class Stopwatch : MonoBehaviour
 
         TimeSpan time = TimeSpan.FromSeconds(currentTime);
 
-        currentTimeText.text = time.Minutes + ":" + time.Seconds;
+        currentTimeTextCanvas.text = time.Minutes + ":" + time.Seconds;
+        currentTimeTextGameOver.text = time.Minutes + ":" + time.Seconds;
     }
 
     public void StartStopwatch()

@@ -9,9 +9,9 @@ using UnityEngine.UIElements;
 public class GameOverMenu : MonoBehaviour
 {
     public GameObject gameOverMenu;
-    public Stopwatch stopwatch;
+    //public Stopwatch stopwatch;
     //public DeathCount deathCount;
-    public TextMeshProUGUI stopwatchText;
+    //public TextMeshProUGUI stopwatchText;
     //public TextMeshProUGUI deathCountText;
     
     public void Start()
@@ -30,10 +30,10 @@ public class GameOverMenu : MonoBehaviour
     {
         gameOverMenu.SetActive(true);
         
-        stopwatchText.text = stopwatch.currentTimeText.text;
+        //stopwatchText.text = stopwatch.currentTimeText.text;
         //deathCountText.text = deathCount.deathCountText.text;
         
-        stopwatch.gameObject.SetActive(false);
+        //stopwatch.gameObject.SetActive(false);
         //deathCount.gameObject.SetActive(false);
         
     }
