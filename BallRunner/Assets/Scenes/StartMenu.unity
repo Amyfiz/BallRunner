@@ -720,8 +720,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChooseLevel, Assembly-CSharp
+      - m_Target: {fileID: 306166314}
+        m_TargetAssemblyTypeName: SelectLevel, Assembly-CSharp
         m_MethodName: SetMediumLevel
         m_Mode: 1
         m_Arguments:
@@ -1258,8 +1258,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChooseLevel, Assembly-CSharp
+      - m_Target: {fileID: 306166314}
+        m_TargetAssemblyTypeName: SelectLevel, Assembly-CSharp
         m_MethodName: SetHardLevel
         m_Mode: 1
         m_Arguments:
@@ -1449,8 +1449,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ChooseLevel, Assembly-CSharp
+      - m_Target: {fileID: 306166314}
+        m_TargetAssemblyTypeName: SelectLevel, Assembly-CSharp
         m_MethodName: SetEasyLevel
         m_Mode: 1
         m_Arguments:
