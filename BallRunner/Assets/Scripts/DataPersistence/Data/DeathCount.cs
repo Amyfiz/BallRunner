@@ -39,11 +39,10 @@ public class DeathCount : MonoBehaviour, IDataPersistence
     private void OnPlayerDeath() 
     {
         deathCount++;
-        //Debug.Log("Deaths: " + deathCount);
     }
 
     private void Update() 
     {
-        deathCountText.text = "Deaths: " + deathCount;
+        deathCountText.text = "" + deathCount;
     }
 }

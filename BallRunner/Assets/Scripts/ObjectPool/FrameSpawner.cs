@@ -7,19 +7,31 @@ public class FrameSpawner : MonoBehaviour
 {
     //public GameObject framePrefab;
     private ObjectPooler objectPooler;
+    private float speed;
+    
+    public int secondsToSpeedUp;
 
     private void Start()
     {
         objectPooler = ObjectPooler.Instance;
-        //Instantiate(framePrefab, new Vector3(9f, -7, 0), Quaternion.identity);
-        //objectPooler.SpawnFromPool("Frame", new Vector3(9f, -7, 0), Quaternion.identity);
-
+        speed = 0.1f;
+        InvokeRepeating("IncreaseSpeed", secondsToSpeedUp, secondsToSpeedUp);
         InvokeRepeating("SpawnFrame", 0, 1);
     }
 
     private void SpawnFrame()
     {
         objectPooler.SpawnFromPool("Frame", new Vector3(9f, -7, 0), Quaternion.identity);
-        //Instantiate(framePrefab, new Vector3(9f, -7, 0), Quaternion.identity);
+    }
+
+    private void FixedUpdate()
+    {
+        transform.position = new Vector3(transform.position.x - speed, transform.position.y, 0);
+    }
+
+    public void IncreaseSpeed()
+    {
+        speed += 0.01f;
+        Debug.Log("Speed increased");
     }
 }

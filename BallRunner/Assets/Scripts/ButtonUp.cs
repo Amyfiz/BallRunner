@@ -6,17 +6,15 @@ using UnityEngine.EventSystems;
 
 public class ButtonUp : MonoBehaviour
 {
-    //public EventTrigger eventTrigger;
     private bool isGoingUp = false;
+    private bool isGameStarted = false;
 
     private void Update()
     {
-        //eventTrigger.OnPointerDown(FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * Time.fixedDeltaTime * 100f, ForceMode2D.Force));
         if (isGoingUp)
         {
             FindObjectOfType<PlayerController>().rigidbody
                 .AddForce(transform.up * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
-            //rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
         }
     }
     
@@ -25,8 +23,13 @@ public class ButtonUp : MonoBehaviour
         isGoingUp = _isGoingUp;
     }
 
-    public void StartGame()
-    {
-        GameEventManager.instance.GameStart();
-    }
+    // public void StartGame()
+    // {
+    //     if (!isGameStarted)
+    //     {
+    //         GameEventManager.instance.GameStart();
+    //     }
+    //
+    //     isGameStarted = true;
+    // }
 }

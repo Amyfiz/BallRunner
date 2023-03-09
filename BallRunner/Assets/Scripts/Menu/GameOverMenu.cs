@@ -4,12 +4,11 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class GameOverMenu : MonoBehaviour
 {
-    //private bool isGameOverMenuOn;
     public GameObject gameOverMenu;
-    //public GameObject buttonUp;
     public Stopwatch stopwatch;
     public DeathCount deathCount;
     public TextMeshProUGUI gameTime;
@@ -32,6 +31,10 @@ public class GameOverMenu : MonoBehaviour
         gameOverMenu.SetActive(true);
         gameTime.text = stopwatch.currentTimeText.text;
         deaths.text = deathCount.deathCountText.text;
+        
+        stopwatch.gameObject.SetActive(false);
+        deathCount.gameObject.SetActive(false);
+        
     }
     
     public void HideGameOverMenu()

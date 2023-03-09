@@ -12,15 +12,10 @@ public class PlayerController : MonoBehaviour
     private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
     public float flyForce = 10f;
-    //public GameOverMenu gameOverMenu;
-    //public Stopwatch stopwatch;
-    //public Canvas canvas;
     
     private void Start()
     {
-        GameEventManager.instance.GameStart();
-        transform.position = new Vector3(3, -7, 0);
-        Time.timeScale = 1;
+        GameStart();
         //GameEventManager.instance.onGameStart += GameStart;
     }
 
@@ -31,7 +26,9 @@ public class PlayerController : MonoBehaviour
 
     public void GameStart()
     {
-        
+        GameEventManager.instance.GameStart();
+        transform.position = new Vector3(3, -7, 0);
+        Time.timeScale = 1;
     }
 
     void FixedUpdate()

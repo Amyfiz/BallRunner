@@ -11,8 +11,8 @@ public class MainMenu : MonoBehaviour
 
     public void Start()
     {
-        levelsOn = false;
-        selectLevel.SetActive(false);
+        levelsOn = false; 
+        //selectLevel.SetActive(false);
     }
 
     public void StartNewGame()
