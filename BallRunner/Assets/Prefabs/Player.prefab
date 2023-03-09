@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -152,7 +152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 208761182962816775}
   flyForce: 10
-  canvas: {fileID: 340815085092972007, guid: 29f85b65caed0cc449f568d16efa72b7, type: 3}
 --- !u!1 &5732897577350523540
 GameObject:
   m_ObjectHideFlags: 0
