@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
     private float flyForce = 10f;
     
@@ -24,11 +23,6 @@ public class PlayerController : MonoBehaviour
         {
             Death();
         }
-    }
-
-    public void Up(bool _isGoingUp)
-    {
-        isGoingUp = _isGoingUp;
     }
 
     public void Death()
