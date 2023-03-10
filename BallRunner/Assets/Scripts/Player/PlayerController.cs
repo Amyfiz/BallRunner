@@ -4,7 +4,7 @@ public class PlayerController : MonoBehaviour
 {
     private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
-    public float flyForce = 10f;
+    private float flyForce = 10f;
     
     private void Start()
     {
@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         if (isGoingUp)
         {
-            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 300f, ForceMode2D.Force);
         }
     }
 

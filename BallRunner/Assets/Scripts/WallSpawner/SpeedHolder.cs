@@ -8,7 +8,7 @@ public class SpeedHolder: MonoBehaviour
     {
         currentSpeed = 0.1f;
         
-        InvokeRepeating("IncreaseSpeed", 5, 5);
+        InvokeRepeating("IncreaseSpeed", 1, 1);
     }
 
     public void IncreaseSpeed()
