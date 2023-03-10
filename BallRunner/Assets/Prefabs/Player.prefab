@@ -151,7 +151,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 208761182962816775}
-  flyForce: 10
 --- !u!1 &5732897577350523540
 GameObject:
   m_ObjectHideFlags: 0
