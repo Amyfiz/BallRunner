@@ -1,7 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
+/// <summary>
+/// Checking what difficulty are we on. Not being used anywhere.
+/// </summary>
 
 public class CurrentDifficulty : MonoBehaviour
 {

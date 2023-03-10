@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 680daf428b14d584bb7cc31776634983, type: 3}
   m_Name: MediumDifficulty
   m_EditorClassIdentifier: 
-  wallFrequency: 2.5
-  speedToIncrease: 0.03
+  wallFrequency: 1.75
+  speedToIncrease: 0.003

@@ -1,43 +1,28 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.Tilemaps;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
     private bool isGoingUp = false;
     public Rigidbody2D rigidbody;
-    public float flyForce = 10f;
+    private float flyForce = 10f;
     
     private void Start()
     {
         GameStart();
         Time.timeScale = 0;
-        //GameEventManager.instance.onGameStart += GameStart;
-    }
-
-    private void OnDestroy()
-    {
-        //GameEventManager.instance.onGameStart -= GameStart;
     }
 
     public void GameStart()
     {
         GameEventManager.instance.GameStart();
         transform.position = new Vector3(3, -7, 0);
-        //Time.timeScale = 1;
     }
 
     void FixedUpdate()
     {
         if (isGoingUp)
         {
-            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
-            //rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 300f, ForceMode2D.Force);
         }
     }
 
