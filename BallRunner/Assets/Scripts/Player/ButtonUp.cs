@@ -9,7 +9,7 @@ public class ButtonUp : MonoBehaviour
         if (isGoingUp)
         {
             FindObjectOfType<PlayerController>().rigidbody
-                .AddForce(transform.up * Time.fixedDeltaTime * 100f, ForceMode2D.Force);
+                .AddForce(transform.up * Time.fixedDeltaTime * 200f, ForceMode2D.Force);
         }
     }
     

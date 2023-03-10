@@ -18,14 +18,6 @@ public class PlayerController : MonoBehaviour
         transform.position = new Vector3(3, -7, 0);
     }
 
-    void FixedUpdate()
-    {
-        if (isGoingUp)
-        {
-            FindObjectOfType<PlayerController>().rigidbody.AddForce(transform.up * flyForce * Time.fixedDeltaTime * 300f, ForceMode2D.Force);
-        }
-    }
-
     public void OnTriggerEnter2D(Collider2D wall)
     {
         if (wall.tag == "Wall")

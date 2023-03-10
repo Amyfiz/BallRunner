@@ -32,5 +32,9 @@ public class GameOverMenu : MonoBehaviour
         SceneManager.LoadScene(1);
     }
     
-    
+    public void Quit()
+        {
+            Application.Quit();
+            Debug.Log("Quit");
+        }
 }
